@@ -1,0 +1,190 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Roue de l'équilibre · FADJA TS-ÉDUC</title>
+<style>
+  :root{
+    --mauve:#7F3F98; --mauve2:#8A6FAE; --rose:#D8A1B3; --lilas:#D9A7E8;
+    --or:#D4AF37; --doux:#F8F8F4; --ink:#2B2A2B; --muted:#6b6670; --line:#e7e2ec;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:Montserrat,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:var(--doux);line-height:1.5}
+  header{background:var(--mauve);color:#fff;text-align:center;padding:28px 20px 22px}
+  header h1{font-family:"Brown Sugar",Montserrat,sans-serif;font-weight:400;font-size:2rem;margin:0}
+  header p{margin:6px 0 0;font-family:"Tenor Sans",Montserrat,sans-serif;opacity:.9}
+  main{max-width:1000px;margin:0 auto;padding:24px 16px 48px}
+  .intro{background:#fff;border-left:4px solid var(--or);padding:14px 16px;border-radius:10px;font-size:.95rem}
+  .grid{display:grid;grid-template-columns:1.1fr 1fr;gap:24px;margin-top:20px;align-items:start}
+  @media (max-width:800px){.grid{grid-template-columns:1fr}}
+  .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px}
+  .sliders label{display:grid;grid-template-columns:1fr auto;gap:4px 10px;margin:12px 0;font-size:.92rem}
+  .sliders input[type=range]{grid-column:1/-1;width:100%;accent-color:var(--mauve)}
+  .sliders output{font-weight:600;color:var(--mauve)}
+  svg text{font-family:Montserrat,sans-serif;fill:var(--ink);font-size:11px}
+  .result{margin-top:14px;border-radius:12px;padding:16px;color:#fff}
+  .r-sante{background:var(--mauve)}
+  .r-desequilibre{background:var(--mauve2)}
+  .r-fragilise{background:var(--rose);color:var(--ink)}
+  .result h2{font-family:"Brown Sugar",Montserrat,sans-serif;font-weight:400;font-size:1.4rem;margin:0 0 6px}
+  .result p{margin:6px 0;font-size:.92rem}
+  .watch{display:inline-block;background:var(--or);color:var(--ink);padding:2px 10px;border-radius:999px;font-size:.85rem;margin:2px 4px 2px 0;font-weight:600}
+  .legend{font-size:.85rem;color:var(--muted);margin-top:10px}
+  .tips{margin-top:18px}
+  .tips li{margin:6px 0}
+  .signature{margin-top:24px;text-align:center;font-family:"Tenor Sans",Montserrat,sans-serif;color:var(--mauve);font-size:.95rem}
+  .safety{background:#fff;border:1px solid var(--rose);border-radius:10px;padding:12px 14px;margin-top:14px;font-size:.9rem;display:none}
+</style>
+</head>
+<body>
+<header>
+  <h1>Roue de l'équilibre</h1>
+  <p>Comment chaque sphère de ta vie se porte-t-elle aujourd'hui ?</p>
+</header>
+<main>
+
+<section class="intro">
+  Une personne est « en santé » lorsque la majorité de ses sphères sont répondues et satisfaisantes. Elle devient « en déséquilibre » lorsqu'un aspect de sa vie est délaissé alors qu'il compte pour elle. Déplace chaque curseur de 0 (pas du tout satisfait.e) à 10 (très satisfait.e).
+</section>
+
+<div class="grid">
+  <div class="card">
+    <svg id="wheel" viewBox="0 0 400 400" role="img" aria-label="Roue de l'équilibre"></svg>
+    <p class="legend">Le cercle en pointillés représente un niveau de satisfaction de 6/10 ; une sphère en dessous de 5 demande une attention particulière.</p>
+  </div>
+
+  <div class="card">
+    <div class="sliders" id="sliders"></div>
+    <div id="result"></div>
+    <div class="safety" id="safety">
+      <strong>Si tu penses à te faire du mal ou si tu es en danger immédiat :</strong> compose le <strong>9-1-1</strong>, appelle ou texte le <strong>988</strong> (Canada), ou rends-toi à l'urgence la plus proche.
+    </div>
+  </div>
+</div>
+
+<div class="card tips">
+  <h3 style="margin-top:0;color:var(--mauve)">Pour rééquilibrer</h3>
+  <ul>
+    <li>Choisis une sphère sous 5 et pose une seule petite action cette semaine.</li>
+    <li>Garde les sphères déjà satisfaisantes : les nommer aide à ne pas les perdre.</li>
+    <li>Si plusieurs sphères sont basses en même temps, parle-en à une personne de confiance ou à un.e intervenant.e.</li>
+  </ul>
+</div>
+
+<div class="card refs" style="margin-top:20px">
+  <h3 style="margin-top:0;color:var(--mauve)">Références</h3>
+  <p style="font-size:.9rem;margin:0 0 10px"><em>Outil inspiré de la « roue de la vie » (Wheel of Life), concept attribué à Paul J. Meyer, fondateur du Success Motivation Institute, dans les années 1960. Le nom « Wheel of Life » est une marque de commerce ; l'outil présenté ici en reprend la méthode, sous un titre différent.</em></p>
+  <ol style="font-size:.88rem;padding-left:20px">
+    <li>Mind Tools. <em>The Wheel of Life®: Finding Balance in Your Life</em>. <a href="https://prime.mindtools.com/pages/article/newHTE_93.htm">https://prime.mindtools.com/pages/article/newHTE_93.htm</a></li>
+    <li>Positive Psychology. <em>The Wheel of Life: How to Apply It in Coaching</em>. <a href="https://positivepsychology.com/wheel-of-life-coaching/">https://positivepsychology.com/wheel-of-life-coaching/</a></li>
+    <li>Swart, J. (2022). <em>The wheel of life as a coaching tool to audit life's priorities</em>. ResearchGate.</li>
+    <li>French, A. (2019). <em>Wheel of life</em>. Coast Clinic.</li>
+  </ol>
+  <p style="font-size:.85rem;color:var(--muted);margin:8px 0 0">Les seuils de résultat (6, 5 et un écart de 4) sont des choix de conception et ne proviennent pas de ces sources.</p>
+</div>
+
+<p class="signature">FADJA TS-ÉDUC · Tiens bon… avec douceur</p>
+</main>
+
+<script>
+  const spheres = [
+    {id:'sante', label:'Santé physique', v:7},
+    {id:'emotions', label:'Bien-être émotionnel', v:6},
+    {id:'couple', label:'Couple / vie amoureuse', v:6},
+    {id:'famille', label:'Famille', v:7},
+    {id:'amis', label:'Amis et vie sociale', v:6},
+    {id:'travail', label:'Travail et carrière', v:5},
+    {id:'finances', label:'Finances', v:5},
+    {id:'loisirs', label:'Loisirs et plaisir', v:6},
+    {id:'croissance', label:'Croissance personnelle', v:7},
+    {id:'maison', label:'Maison et environnement', v:6}
+  ];
+
+  const N = spheres.length, CX = 200, CY = 200, R = 150;
+  const svg = document.getElementById('wheel');
+  const slidersEl = document.getElementById('sliders');
+
+  function pt(i, r){
+    const a = -Math.PI/2 + (2*Math.PI*i)/N;
+    return [CX + r*Math.cos(a), CY + r*Math.sin(a)];
+  }
+
+  function buildSliders(){
+    slidersEl.innerHTML = spheres.map((s,i) =>
+      `<label>${s.label}<output id="out-${s.id}">${s.v}</output>
+        <input type="range" min="0" max="10" step="1" value="${s.v}" data-i="${i}" aria-label="${s.label}"></label>`
+    ).join('');
+    slidersEl.querySelectorAll('input').forEach(inp => {
+      inp.addEventListener('input', e => {
+        const i = Number(e.target.dataset.i);
+        spheres[i].v = Number(e.target.value);
+        document.getElementById('out-'+spheres[i].id).textContent = spheres[i].v;
+        draw();
+      });
+    });
+  }
+
+  function drawWheel(){
+    let g = '';
+    // grille concentrique
+    [2,4,6,8,10].forEach(k => {
+      const r = R*k/10;
+      const pts = spheres.map((_,i)=>pt(i,r).join(',')).join(' ');
+      const dash = k===6 ? ' stroke-dasharray="4 4"' : '';
+      g += `<polygon points="${pts}" fill="none" stroke="#d6cfe0" stroke-width="1"${dash}/>`;
+    });
+    // rayons + libellés
+    spheres.forEach((s,i) => {
+      const [x,y] = pt(i,R);
+      g += `<line x1="${CX}" y1="${CY}" x2="${x}" y2="${y}" stroke="#d6cfe0"/>`;
+      const [lx,ly] = pt(i,R+22);
+      const anchor = lx < CX-5 ? 'end' : (lx > CX+5 ? 'start' : 'middle');
+      g += `<text x="${lx}" y="${ly}" text-anchor="${anchor}" dominant-baseline="middle">${s.label}</text>`;
+    });
+    // polygone des valeurs
+    const vals = spheres.map((s,i)=>pt(i, R*s.v/10).join(',')).join(' ');
+    g += `<polygon points="${vals}" fill="#D9A7E8" fill-opacity=".55" stroke="#7F3F98" stroke-width="2"/>`;
+    spheres.forEach((s,i)=>{
+      const [x,y]=pt(i,R*s.v/10);
+      const col = s.v<5 ? '#D4AF37' : '#7F3F98';
+      g += `<circle cx="${x}" cy="${y}" r="4.5" fill="${col}"/>`;
+    });
+    svg.innerHTML = g;
+  }
+
+  function evaluate(){
+    const vals = spheres.map(s=>s.v);
+    const avg = vals.reduce((a,b)=>a+b,0)/N;
+    const low = spheres.filter(s=>s.v<5);
+    const min = Math.min(...vals), max = Math.max(...vals);
+    const spread = max - min;
+    let cls, title, text;
+    if (avg >= 6 && min >= 5 && spread <= 4){
+      cls='r-sante'; title='En santé';
+      text='La plupart de tes sphères sont répondues et satisfaisantes. Continue de nourrir ce qui te fait du bien.';
+    } else if (avg >= 5){
+      cls='r-desequilibre'; title='En déséquilibre';
+      text='Tu es globalement bien, mais certains aspects sont délaissés et risquent de peser sur l\'ensemble.';
+    } else {
+      cls='r-fragilise'; title='Fragilisé.e';
+      text='Plusieurs sphères sont fragiles en même temps. Il est important de ne pas rester seul.e avec ça : parle à une personne de confiance ou à un.e professionnel.le.';
+    }
+    const watch = low.length
+      ? '<p><strong>Sphères à ne pas délaisser :</strong><br>' + low.map(s=>`<span class="watch">${s.label}</span>`).join('') + '</p>'
+      : '';
+    document.getElementById('result').innerHTML =
+      `<div class="result ${cls}"><h2>${title}</h2><p>${text}</p>${watch}</div>`;
+    document.getElementById('safety').style.display = (avg < 5) ? 'block' : 'none';
+  }
+
+  function draw(){ drawWheel(); evaluate(); }
+
+  buildSliders();
+  draw();
+</script>
+</body>
+</html>
+
+</body></html>
